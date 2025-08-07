@@ -1,0 +1,74 @@
+[project]
+name = "docs-to-rag"
+version = "0.1.0"
+description = "Educational RAG system with local LLMs using Ollama"
+authors = [
+    {name = "Juanje Ojeda", email = "juanje@redhat.com"}
+]
+readme = "README.md"
+requires-python = ">=3.10"
+
+dependencies = [
+    "langchain>=0.1.0",
+    "langchain-ollama>=0.1.0",
+    "docling>=1.0.0",
+    "faiss-cpu>=1.7.4",
+    "click>=8.1.0",
+    "rich>=13.0.0",
+    "beautifulsoup4>=4.12.0",
+    "markdown>=3.5.0",
+    "python-dotenv>=1.0.0",
+    "pydantic>=2.5.0",
+    "httpx>=0.25.0",
+    "aiofiles>=23.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "ruff>=0.1.0",
+    "mypy>=1.7.0",
+    "pre-commit>=3.0.0",
+]
+
+[project.scripts]
+docs-to-rag = "src.cli.commands:main"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.ruff]
+target-version = "py310"
+line-length = 88
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "N", "UP", "B", "A", "C4", "PT"]
+# Ignore line-too-long errors in strings and comments since they can't be easily split
+ignore = ["E501"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "unit: Unit tests (fast, use mocks)",
+    "integration: Integration tests (slower, use real components)",
+]
+addopts = "-v --strict-markers"
+
+[tool.mypy]
+python_version = "3.10"
+strict = true
+warn_return_any = true
+warn_unused_configs = true
+
+[dependency-groups]
+dev = [
+    "mypy>=1.17.1",
+    "pytest-cov>=6.2.1",
+    "pytest-mock>=3.14.1",
+    "ruff>=0.12.7",
+]

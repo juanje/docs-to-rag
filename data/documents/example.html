@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>docs-to-rag HTML Example</title>
+    <meta name="description" content="Example HTML document for testing docs-to-rag system">
+</head>
+<body>
+    <header>
+        <h1>HTML Document Processing Example</h1>
+        <nav>
+            <ul>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#examples">Examples</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="overview">
+            <h2>Overview</h2>
+            <p>This HTML document demonstrates how docs-to-rag processes web content. The system intelligently extracts meaningful content while filtering out navigation, scripts, and other non-content elements.</p>
+            
+            <p>Key capabilities include:</p>
+            <ul>
+                <li>Semantic HTML structure preservation</li>
+                <li>Automatic content cleaning</li>
+                <li>Metadata extraction from head section</li>
+                <li>Link and image information capture</li>
+            </ul>
+        </section>
+
+        <section id="features">
+            <h2>HTML Processing Features</h2>
+            
+            <h3>Content Extraction</h3>
+            <p>The HTML parser uses BeautifulSoup to extract clean text content from HTML documents. It automatically removes:</p>
+            <ul>
+                <li>JavaScript and CSS code</li>
+                <li>Navigation elements</li>
+                <li>Footer and header information</li>
+                <li>Advertisement blocks</li>
+            </ul>
+
+            <h3>Structure Preservation</h3>
+            <p>While cleaning the content, the system preserves important structural elements like headings, paragraphs, and lists to maintain document coherence during chunking.</p>
+
+            <blockquote>
+                <p>"The HTML processor strikes a balance between content cleanliness and structural preservation for optimal RAG performance."</p>
+            </blockquote>
+        </section>
+
+        <section id="examples">
+            <h2>Usage Examples</h2>
+            
+            <h3>Processing HTML Files</h3>
+            <p>To process HTML documents:</p>
+            <pre><code>./docs-to-rag add ./html_files/</code></pre>
+
+            <h3>Query Examples</h3>
+            <p>You can ask questions about HTML content:</p>
+            <ul>
+                <li>"How does HTML processing work?"</li>
+                <li>"What elements are removed during cleaning?"</li>
+                <li>"How is document structure preserved?"</li>
+            </ul>
+
+            <h3>Technical Implementation</h3>
+            <p>The HTML parser component includes:</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Component</th>
+                        <th>Purpose</th>
+                        <th>Technology</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Content Extractor</td>
+                        <td>Extract text from HTML</td>
+                        <td>BeautifulSoup</td>
+                    </tr>
+                    <tr>
+                        <td>Structure Analyzer</td>
+                        <td>Identify headings and sections</td>
+                        <td>CSS Selectors</td>
+                    </tr>
+                    <tr>
+                        <td>Metadata Parser</td>
+                        <td>Extract page metadata</td>
+                        <td>HTML Meta Tags</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 docs-to-rag project. Educational use only.</p>
+        <script>
+            // This script should be removed during processing
+            console.log("This script will be filtered out");
+        </script>
+    </footer>
+</body>
+</html>

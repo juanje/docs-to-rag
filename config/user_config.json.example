@@ -1,0 +1,9 @@
+{
+  "primary_language": "es",
+  "enable_summarization": true,
+  "enable_summary_validation": true,
+  "summarization_model": "llama3.2:latest",
+  "chat_model": "llama3.2:latest",
+  "embedding_model": "nomic-embed-text:v1.5",
+  "embedding_model_multilingual": "jina/jina-embeddings-v2-base-es:latest"
+}
